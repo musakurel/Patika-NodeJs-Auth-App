@@ -1,0 +1,99 @@
+<%- include('partials/header'); -%>
+<style>
+
+  .container-table100 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 33px 30px;
+
+}
+.wrap-table100 {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+
+
+.row {
+  
+  display: table-row;
+  background: #fff;
+}
+
+.table, .row {
+  width: 100% !important;
+
+}
+
+
+.row .cell:nth-child(1) {
+  padding-left: 40px;
+}
+
+.row .cell {
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.2;
+  font-weight: unset !important;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right:40px;
+  border-bottom: 1px solid #f2f2f2;
+}
+.cell {
+  display: table-cell;
+}
+
+.row.header .cell {
+    color: rgb(189, 189, 189) !important;
+    background: #161D31;
+    font-weight: bold !important;
+
+}
+</style>
+
+
+
+
+
+<div class="container-table100">
+  <div class="wrap-table100">
+<h2> User List</h2>     
+  <div class="table">
+  <div class="row header">
+  <div class="cell">
+  Email
+  </div>
+  <div class="cell">
+  User Id
+  </div>
+ 
+  </div>
+
+  <% for(item of newArr) { %>
+    <div class="row">
+    <div class="cell" data-title="Full Name">
+      <%=item.email %>
+    </div>
+    <div class="cell" data-title="Age">
+      <%= item._id %>
+    </div>
+  
+    </div>
+    <% } %>
+  
+  </div>
+
+  </div>
+  </div>
+  </div>
+  </div>
+
+<%- include('partials/footer'); -%>
